@@ -12,11 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/gamelist")
 public class GameController
 {
-    @Autowired
+    // constructor injection
     private GameService gameService;
+    @Autowired
+    public GameController(GameService gameService)
+    {
+        this.gameService = gameService;
+    }
 
-    // GET all games
-    // http://localhost:5000/gamelist
+    // endpoints
+
+    // GET all games, http://localhost:5000/gamelist
     @GetMapping(value = "/", produces = {"application/json"})
     public ResponseEntity<?> getAllGames()
     {

@@ -25,7 +25,7 @@ public class Game extends Auditable
 
     @ManyToOne
     @JoinColumn(name = "publisherid", nullable = false)
-    @JsonIgnoreProperties("publisherid")
+    @JsonIgnoreProperties("games")
     private Publisher publisher;
 
     @Column(nullable = false)
